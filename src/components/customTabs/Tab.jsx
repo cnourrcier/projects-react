@@ -1,8 +1,16 @@
 
-export default function Tab({ currentIndex, tab, handleChange, index }) {
+export default function Tab({ currentSelected, currentGroup, tab, handleChange, index }) {
+    const isActive = currentSelected === index;
+    const isInCurrentGroup = currentGroup.includes(index);
+
+    if (!isInCurrentGroup) {
+        return null;
+    };
+
+    const className = `tab ${isActive ? 'selected' : ''}`;
 
     return (
-        <button className={currentIndex === index ? 'tab active' : 'tab'} onClick={() => handleChange(index)}>
+        <button className={className} onClick={() => handleChange(index)}>
             {tab.label}
         </button>
     )

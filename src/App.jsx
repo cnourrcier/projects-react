@@ -1,7 +1,6 @@
 import TabContainer from "./components/customTabs/TabContainer";
 import tabs from './components/customTabs/tabs';
 
-
 function App() {
 
   return (

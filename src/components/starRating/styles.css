@@ -1,0 +1,15 @@
+.star-rating-container {
+    margin-top: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+}
+
+.star-active {
+    color: gold;
+}
+
+.star-inactive {
+    color: grey;
+}

@@ -1,0 +1,65 @@
+:root {
+    --main-bg-color: #fff;
+    --main-text-color: #000;
+    --button-bg-color: #000;
+    --button-text-color: #fff;
+}
+
+[data-theme='dark'] {
+    --main-bg-color: #000;
+    --main-text-color: #fff;
+    --button-bg-color: #fff;
+    --button-text-color: #000;
+}
+
+.light-dark-container {
+    width: 100%;
+    background-color: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 20px;
+    transition: all 1s;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 200px;
+    padding-bottom: 90px;
+}
+
+.content-container h1 {
+    color: var(--main-text-color);
+    margin: 0;
+}
+
+.content-container button {
+    background-color: var(--button-bg-color);
+    border: none;
+    box-shadow: 0px 0px 5px var(--button-bg-color);
+    color: var(--button-text-color);
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    animation: buttonGlow 4s ease-in-out infinite;
+}
+
+@keyframes buttonGlow {
+
+    0%,
+    100% {
+        box-shadow: 0px 0px 5px var(--button-bg-color);
+    }
+
+    50% {
+        box-shadow: 0px 0px 10px var(--button-bg-color);
+    }
+}

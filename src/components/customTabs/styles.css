@@ -1,16 +1,41 @@
+body {
+    margin: 0;
+}
+
 .tab-bar-wrapper {
-    height: auto;
+    position: relative;
+    top: 0;
     padding: 20px;
     background-color: blue;
     display: flex;
-    flex-direction: column;
     gap: 20px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+}
+
+
+
+@media (max-width: 600px) {
+    .tab-bar-wrapper {
+        display: none;
+    }
+
+    .tab-bar-wrapper-small-screens {
+        padding: 20px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        background-color: blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .tabs-container {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 3px;
 }
 
@@ -35,15 +60,35 @@
     color: #000;
 }
 
-.active {
+.selected {
     background-color: #fff;
     color: #000;
 }
 
-.content {
+.tab-arrow {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+}
+
+.tab-arrow.left {
+    left: 20px;
+}
+
+.tab-arrow.right {
+    right: 20px;
+}
+
+.tab-arrow.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* .content {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     font-family: sans-serif;
-}
+} */
