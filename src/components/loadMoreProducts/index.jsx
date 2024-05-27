@@ -9,8 +9,7 @@ export default function LoadMoreData({ url, limit }) {
     const [error, setError] = useState(null);
     const [hasMoreProducts, setHasMoreProducts] = useState(true);
 
-    // References to handle component lifecycle and scroll position
-    const isMounted = useRef(false);
+    // References to handle and scroll position
     const scrollRef = useRef(null);
     const previousScrollPosition = useRef(0);
 
@@ -58,11 +57,7 @@ export default function LoadMoreData({ url, limit }) {
 
     // Effect to fetch products when the component mounts or when the count/url changes
     useEffect(() => {
-        if (isMounted.current) {
-            fetchProducts();
-        } else {
-            isMounted.current = true;
-        }
+        fetchProducts();
     }, [count, url]);
 
     // Effect to restore the scroll position after products are updated
